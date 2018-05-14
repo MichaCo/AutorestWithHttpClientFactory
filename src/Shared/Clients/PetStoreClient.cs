@@ -9,7 +9,7 @@ namespace Swagger
     public partial class PetStoreClient
     {
         public PetStoreClient(IOptionsSnapshot<ClientSettings> options, HttpClient httpClient)
-            : base(httpClient, false)
+            : base(httpClient, true)
         {
             if (options == null)
             {
@@ -30,8 +30,9 @@ namespace Swagger
             Credentials = settings.Credentials;
         }
 
+        // disposeHttpClient can be set to true here, HttpClientFactory sets dispose handle to false to the client will not dispose the HttpClientHandle
         public PetStoreClient(Uri baseUri, HttpClient httpClient, ServiceClientCredentials credentials)
-            : base(httpClient, false)
+            : base(httpClient, disposeHttpClient: true)
         {
             BaseUri = baseUri ?? throw new ArgumentNullException(nameof(baseUri));
             Credentials = credentials ?? throw new ArgumentNullException(nameof(credentials));
