@@ -9,8 +9,4 @@
     <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.11" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Clients\" />
-  </ItemGroup>
 </Project>
