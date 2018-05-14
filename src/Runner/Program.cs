@@ -46,7 +46,7 @@ namespace Runner
             // no implementation here, just dummy here...
             services.AddSingleton<IServiceDiscovery, ServiceDiscovery>();
 
-            // add token providers so it can get depedencies from DI, too
+            // add token providers so it can get dependencies from DI, too
             services.AddScoped<UserAccessTokenProvider>();
             services.AddScoped<ClientCredentialsTokenProvider>();
 
